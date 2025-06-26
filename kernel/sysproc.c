@@ -91,3 +91,14 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+extern int syscallcounter[];
+
+uint64
+sys_syscall_count(void)
+{ int x;
+  argint(0, &x);
+  if(x<0||x>=30)
+    return -1;
+
+  return syscallcounter[x];
+}
