@@ -142,7 +142,7 @@ UPROGS=\
 	$U/_touch\
 	$U/_syscallcount\
         $U/_getproccount\
-
+	$U/_search\
 
 fs.img: mkfs/mkfs README $(UPROGS)
 	mkfs/mkfs fs.img README $(UPROGS)
