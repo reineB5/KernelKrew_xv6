@@ -23,6 +23,7 @@ char* sbrk(int);
 int sleep(int);
 int uptime(void);
 int syscall_count(int);
+int getproccount(void);
 
 // ulib.c
 int stat(const char*, struct stat*);

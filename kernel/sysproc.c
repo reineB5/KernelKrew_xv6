@@ -102,3 +102,18 @@ sys_syscall_count(void)
 
   return syscallcounter[x];
 }
+extern struct proc proc[NPROC];  // Add this near the top
+
+uint64
+sys_getproccount(void)
+{
+    struct proc *p;
+    int count = 0;
+
+    for (p = proc; p < &proc[NPROC]; p++) {
+        if (p->state != UNUSED)
+            count++;
+    }
+
+    return count;
+}

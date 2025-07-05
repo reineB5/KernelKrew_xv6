@@ -141,6 +141,7 @@ UPROGS=\
 	$U/_zombie\
 	$U/_touch\
 	$U/_syscallcount\
+        $U/_getproccount\
 
 
 fs.img: mkfs/mkfs README $(UPROGS)
