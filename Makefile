@@ -143,6 +143,7 @@ UPROGS=\
 	$U/_syscallcount\
         $U/_getproccount\
 	$U/_search\
+        $U/_vmtest\
 
 fs.img: mkfs/mkfs README $(UPROGS)
 	mkfs/mkfs fs.img README $(UPROGS)
