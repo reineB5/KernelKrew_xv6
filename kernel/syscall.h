@@ -22,3 +22,4 @@
 #define SYS_close  21
 #define SYS_syscall_count 23
 #define SYS_getproccount 24
+#define SYS_vtop 22

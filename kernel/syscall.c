@@ -105,6 +105,7 @@ extern uint64 sys_mkdir(void);
 extern uint64 sys_close(void);
 extern uint64 sys_syscall_count(void);
 extern uint64 sys_getproccount(void);
+extern uint64 sys_vtop(void);
 
 // An array mapping syscall numbers from syscall.h
 // to the function that handles the system call.
@@ -132,6 +133,7 @@ static uint64 (*syscalls[])(void) = {
 [SYS_close]   sys_close,
 [SYS_syscall_count] sys_syscall_count,
 [SYS_getproccount] sys_getproccount,
+[SYS_vtop]    sys_vtop,
 
 };
 

@@ -117,3 +117,12 @@ sys_getproccount(void)
 
     return count;
 }
+uint64
+sys_vtop(void)
+{
+  uint64 vaddr;
+  argaddr(0, &vaddr);
+
+  // implement translation logic here
+  return 0;
+}

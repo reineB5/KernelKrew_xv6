@@ -24,6 +24,7 @@ int sleep(int);
 int uptime(void);
 int syscall_count(int);
 int getproccount(void);
+int vtop(void* vaddr);
 
 // ulib.c
 int stat(const char*, struct stat*);
