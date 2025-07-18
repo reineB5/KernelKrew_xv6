@@ -117,6 +117,6 @@ getproccount:
  ret
 .global vtop
 vtop:
-  li a7, SYS_vtop
-  ecall
-  ret
+ li a7, SYS_vtop
+ ecall
+ ret

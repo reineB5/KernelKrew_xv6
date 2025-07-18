@@ -38,3 +38,4 @@ entry("sleep");
 entry("uptime");
 entry("syscall_count");
 entry("getproccount");
+entry("vtop");
