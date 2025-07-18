@@ -6,6 +6,9 @@
 #include "spinlock.h"
 #include "proc.h"
 
+
+// Declare walkaddr manually if vm.h is missing
+extern uint64 walkaddr(pagetable_t pagetable, uint64 va);
 uint64
 sys_exit(void)
 {
@@ -121,8 +124,13 @@ uint64
 sys_vtop(void)
 {
   uint64 vaddr;
-  argaddr(0, &vaddr);
+  struct proc *p = myproc();
 
-  // implement translation logic here
-  return 0;
+  // Fetch the virtual address argument from user space
+  argaddr(0, &vaddr);  
+
+  // Translate to physical address using walkaddr
+  uint64 paddr = walkaddr(p->pagetable, vaddr);
+
+  return paddr; // returns 0 if address is not valid or unmapped
 }
